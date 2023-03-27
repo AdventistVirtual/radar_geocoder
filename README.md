@@ -147,6 +147,7 @@ pip install radargeocoder
 ```
 
 #Calling The Function (Combined Code Below)
+
 Set a ```SECRET_KEY``` variable to a string containing the secret key needed to access the Radar API.
 
 ```
