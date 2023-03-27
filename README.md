@@ -139,11 +139,11 @@ def f_geocode_address_list(address_list):
     return geocoded_df
 ```
 
-# Installing the ```Radar_Geocoder``` Package
+# Installing the ```RadarGeocoder``` Package
 Install the package using ```pip```.
 
 ```
-pip install radar_geocoder
+pip install radargeocoder
 ```
 
 #Calling The Function (Combined Code Below)
