@@ -31,10 +31,10 @@ Import the ```RadarClient``` class from the ```radar``` module.
 from radar import RadarClient
 ```
 
-Define a function called ```f_geocode_address_list``` that takes a list of addresses as an argument.
+Define a function called ```f_geocode_address_list``` that takes a list of addresses and the radar secret key as an arguments.
 
 ```
-def f_geocode_address_list(address_list):
+def f_geocode_address_list(address_list, SECRET_KEY):
 ```
 
 Create a ```RadarClient``` instance named ```radar``` with the secret key stored in the ```SECRET_KEY``` variable.
@@ -92,16 +92,16 @@ Append the ```data``` dictionary to the ```geocoded_data``` list.
         geocoded_data.append(data)
 ```
 
-Create a pandas DataFrame called ```df``` from the ```geocoded_data``` list using the ```pd.DataFrame()``` method.
+Create a pandas DataFrame called ```geocoded_df``` from the ```geocoded_data``` list using the ```pd.DataFrame()``` method.
 
 ```
-    df = pd.DataFrame(geocoded_data)
+    geocoded_df = pd.DataFrame(geocoded_data)
 ```
 
 Return the DataFrame.
 
 ```
-    return df
+    return geocoded_df
 ```
 
 # Combined Code
@@ -135,8 +135,8 @@ def f_geocode_address_list(address_list):
             "street": address.street
         }
         geocoded_data.append(data)
-    df = pd.DataFrame(geocoded_data)
-    return df
+    geocoded_df = pd.DataFrame(geocoded_data)
+    return geocoded_df
 ```
 
 # Installing the ```Radar_Geocoder``` Package
@@ -160,16 +160,16 @@ Define a list of ```addresses``` called ```address_list```.
 address_list = ["5 Verti Drive, Waterville, Maine, 04901", "123 Main St, Anytown, California, 12345"]
 ```
 
-Call the ```f_geocode_address_list``` function with the ```address_list``` variable as an argument and store the returned DataFrame in a variable called ```df```.
+Call the ```f_geocode_address_list``` function with the ```address_list``` and ```SECRET_KEY``` variable as arguments and store the returned DataFrame in a variable called ```geocoded_df```.
 
 ```
-df = f_geocode_address_list(address_list)
+geocoded_df = f_geocode_address_list(address_list, SECRET_KEY)
 ```
 
-Display the DataFrame using the ```df``` variable.
+Display the DataFrame using the ```geocoded_df``` variable.
 
 ```
-df
+geocoded_df
 ```
 
 Example Output.
