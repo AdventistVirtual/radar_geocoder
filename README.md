@@ -151,7 +151,6 @@ Set a ```SECRET_KEY``` variable to a string containing the secret key needed to 
 
 ```
 SECRET_KEY = "Your_Key_Here"
-
 ```
 
 Define a list of ```addresses``` called ```address_list```.
