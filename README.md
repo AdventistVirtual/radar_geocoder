@@ -2,7 +2,7 @@
 
 Python function for geocoding addresses using the Radar API
 
-This code demonstrates how to use the RadarClient class from the radar module to forward (reverse and ip to be added later on) geocode a list of addresses using the Radar API.
+This code demonstrates how to use the RadarClient class from the radar module to forward (reverse and ip to be added later on) geocode a list of addresses using the Radar API , extract all the values, and store them in a dataframe.
 
 # Prerequisites
 You should have a Radar API secret key. If you don't have one, sign up on Radar's website.
