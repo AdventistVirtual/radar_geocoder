@@ -182,6 +182,3 @@ addressLabel	city	confidence	country	countryCode	countryFlag	county	distance	for
 
 # License
 This code is licensed under the MIT License.
-
-# P.S.
-This is my first package so I hope whoever uses it finds it helpful!
