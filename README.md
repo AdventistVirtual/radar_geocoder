@@ -55,34 +55,34 @@ Loop through each ```address``` in the input ```address_list``` using a ```for``
     for address in address_list:
 ```
 
-Query the Radar geocoding API for the latitude, longitude, and other relevant data of the current address using the forward method of the ```radar.geocode``` object. Store the result in the ```address``` variable.
+Query the Radar geocoding API for the latitude, longitude, and other relevant data of the current address using the forward method of the ```radar.geocode``` object. Store the result in the ```location``` variable.
 
 ```
-        address = radar.geocode.forward(query=address)[0]
+        location = radar.geocode.forward(query=address)[0]
 ```
 
-Create a dictionary object called ```data``` that stores the relevant fields of the ```address``` information.
+Create a dictionary object called ```data``` that stores the relevant fields of the ```location``` information.
 
 ```
 data = {
-            "addressLabel": address.addressLabel,
-            "city": address.city,
-            "confidence": address.confidence,
-            "country": address.country,
-            "countryCode": address.countryCode,
-            "countryFlag": address.countryFlag,
-            "county": address.county,
-            "distance": address.distance,
-            "formattedAddress": address.formattedAddress,
-            "geometryType": address.geometry['type'],
-            "layer": address.layer,
-            "latitude": address.latitude,
-            "longitude": address.longitude,
-            "number": address.number,
-            "postalCode": address.postalCode,
-            "state": address.state,
-            "stateCode": address.stateCode,
-            "street": address.street
+            "addressLabel": location.address_label,
+            "city": location.city,
+            "confidence": location.confidence,
+            "country": location.country,
+            "countryCode": location.country_code,
+            "countryFlag": location.country_flag,
+            "county": location.county,
+            "distance": location.distance,
+            "formattedAddress": location.formatted_address,
+            "geometryType": location.geometry['type'],
+            "layer": location.layer,
+            "latitude": location.latitude,
+            "longitude": location.longitude,
+            "number": location.number,
+            "postalCode": location.postal_code,
+            "state": location.state,
+            "stateCode": location.state_code,
+            "street": location.street
         }
 ```
 
@@ -109,30 +109,30 @@ Return the DataFrame.
 Code for ```f_geocode_address_list``` function.
 
 ```
-def f_geocode_address_list(address_list):
+def geocode_address_list(address_list, SECRET_KEY):
     radar = RadarClient(SECRET_KEY)
     geocoded_data = []
-    for query in address_list:
-        address = radar.geocode.forward(query=query)[0]
+    for address in address_list:
+        location = radar.geocode.forward(query=address)[0]
         data = {
-            "addressLabel": address.addressLabel,
-            "city": address.city,
-            "confidence": address.confidence,
-            "country": address.country,
-            "countryCode": address.countryCode,
-            "countryFlag": address.countryFlag,
-            "county": address.county,
-            "distance": address.distance,
-            "formattedAddress": address.formattedAddress,
-            "geometryType": address.geometry['type'],
-            "layer": address.layer,
-            "latitude": address.latitude,
-            "longitude": address.longitude,
-            "number": address.number,
-            "postalCode": address.postalCode,
-            "state": address.state,
-            "stateCode": address.stateCode,
-            "street": address.street
+            "addressLabel": location.address_label,
+            "city": location.city,
+            "confidence": location.confidence,
+            "country": location.country,
+            "countryCode": location.country_code,
+            "countryFlag": location.country_flag,
+            "county": location.county,
+            "distance": location.distance,
+            "formattedAddress": location.formatted_address,
+            "geometryType": location.geometry['type'],
+            "layer": location.layer,
+            "latitude": location.latitude,
+            "longitude": location.longitude,
+            "number": location.number,
+            "postalCode": location.postal_code,
+            "state": location.state,
+            "stateCode": location.state_code,
+            "street": location.street
         }
         geocoded_data.append(data)
     geocoded_df = pd.DataFrame(geocoded_data)
