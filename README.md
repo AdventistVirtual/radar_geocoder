@@ -65,23 +65,23 @@ Create a dictionary object called ```data``` that stores the relevant fields of 
 
 ```
 data = {
-            "addressLabel": location.address_label,
+            "addressLabel": location.addressLabel,
             "city": location.city,
             "confidence": location.confidence,
             "country": location.country,
-            "countryCode": location.country_code,
-            "countryFlag": location.country_flag,
+            "countryCode": location.countryCode,
+            "countryFlag": location.countryFlag,
             "county": location.county,
             "distance": location.distance,
-            "formattedAddress": location.formatted_address,
+            "formattedAddress": location.formattedAddress,
             "geometryType": location.geometry['type'],
             "layer": location.layer,
             "latitude": location.latitude,
             "longitude": location.longitude,
             "number": location.number,
-            "postalCode": location.postal_code,
+            "postalCode": location.postalCode,
             "state": location.state,
-            "stateCode": location.state_code,
+            "stateCode": location.stateCode,
             "street": location.street
         }
 ```
@@ -115,23 +115,23 @@ def geocode_address_list(address_list, SECRET_KEY):
     for address in address_list:
         location = radar.geocode.forward(query=address)[0]
         data = {
-            "addressLabel": location.address_label,
+            "addressLabel": location.addressLabel,
             "city": location.city,
             "confidence": location.confidence,
             "country": location.country,
-            "countryCode": location.country_code,
-            "countryFlag": location.country_flag,
+            "countryCode": location.countryCode,
+            "countryFlag": location.countryFlag,
             "county": location.county,
             "distance": location.distance,
-            "formattedAddress": location.formatted_address,
+            "formattedAddress": location.formattedAddress,
             "geometryType": location.geometry['type'],
             "layer": location.layer,
             "latitude": location.latitude,
             "longitude": location.longitude,
             "number": location.number,
-            "postalCode": location.postal_code,
+            "postalCode": location.postalCode,
             "state": location.state,
-            "stateCode": location.state_code,
+            "stateCode": location.stateCode,
             "street": location.street
         }
         geocoded_data.append(data)
