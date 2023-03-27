@@ -171,6 +171,20 @@ Display the DataFrame using the ```geocoded_df``` variable.
 geocoded_df
 ```
 
+# Combined Code
+
+Combined code for calling the ```f_geocode_address_list``` function.
+
+```
+SECRET_KEY = "Your_Key_Here"
+
+address_list = ["5 Verti Drive, Waterville, Maine, 04901", "123 Main St, Anytown, California, 12345"]
+
+geocoded_df = f_geocode_address_list(address_list, SECRET_KEY)
+
+geocoded_df
+```
+
 Example Output.
 
 ```
