@@ -1,7 +1,7 @@
 import pandas as pd
 from radar import RadarClient
 
-def geocode_address_list(address_list, SECRET_KEY):
+def f_geocode_address_list(address_list, SECRET_KEY):
     radar = RadarClient(SECRET_KEY)
     geocoded_data = []
     for address in address_list:
