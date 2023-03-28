@@ -147,6 +147,13 @@ pip install radargeocoder
 ```
 
 # Calling The Function (Combined Code Below)
+Import the ```radargeocoder``` package and ```f_geocode_address_list``` function.
+
+```
+import radargeocoder
+from radargeocoder import f_geocode_address_list
+```
+
 Set a ```SECRET_KEY``` variable to a string containing the secret key needed to access the Radar API.
 
 ```
@@ -176,6 +183,9 @@ geocoded_df
 Combined code for calling the ```f_geocode_address_list``` function.
 
 ```
+import radargeocoder
+from radargeocoder import f_geocode_address_list
+
 SECRET_KEY = "Your_Key_Here"
 
 address_list = ["5 Verti Drive, Waterville, Maine, 04901", "123 Main St, Anytown, California, 12345"]
